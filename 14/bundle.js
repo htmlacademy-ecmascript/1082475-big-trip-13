@@ -17706,7 +17706,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".toast-container {\n  position: absolute;\n  z-index: 1000;\n  top: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding-top: 0.4em;\n  padding-left: 0.4em;\n  width: 100%;\n  height: 0;\n  font-family: sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  box-sizing: border-box;\n}\n\n.toast-item {\n  display: inline-flex;\n  margin-bottom: 0.4em;\n  padding: 0.4em;\n  border-radius: 0.2em;\n  background-color: #fee;\n  color: #900;\n}\n", "",{"version":3,"sources":["webpack://./src/utils/toast/toast.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,aAAa;EACb,MAAM;EACN,QAAQ;EACR,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,kBAAkB;EAClB,mBAAmB;EACnB,WAAW;EACX,SAAS;EACT,uBAAuB;EACvB,eAAe;EACf,gBAAgB;EAChB,sBAAsB;AACxB;;AAEA;EACE,oBAAoB;EACpB,oBAAoB;EACpB,cAAc;EACd,oBAAoB;EACpB,sBAAsB;EACtB,WAAW;AACb","sourcesContent":[".toast-container {\n  position: absolute;\n  z-index: 1000;\n  top: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding-top: 0.4em;\n  padding-left: 0.4em;\n  width: 100%;\n  height: 0;\n  font-family: sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  box-sizing: border-box;\n}\n\n.toast-item {\n  display: inline-flex;\n  margin-bottom: 0.4em;\n  padding: 0.4em;\n  border-radius: 0.2em;\n  background-color: #fee;\n  color: #900;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".toast-container {\n  position: fixed;\n  z-index: 1000;\n  top: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding-top: 0.4em;\n  padding-left: 0.4em;\n  width: 100%;\n  height: 0;\n  font-family: sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  box-sizing: border-box;\n}\n\n.toast-item {\n  display: inline-flex;\n  margin-bottom: 0.4em;\n  padding: 0.4em;\n  border-radius: 0.2em;\n  background-color: #fee;\n  color: #900;\n  box-shadow: 0 11px 20px rgba(0, 0, 0, 0.043);\n}\n", "",{"version":3,"sources":["webpack://./src/utils/toast/toast.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,aAAa;EACb,MAAM;EACN,QAAQ;EACR,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,kBAAkB;EAClB,mBAAmB;EACnB,WAAW;EACX,SAAS;EACT,uBAAuB;EACvB,eAAe;EACf,gBAAgB;EAChB,sBAAsB;AACxB;;AAEA;EACE,oBAAoB;EACpB,oBAAoB;EACpB,cAAc;EACd,oBAAoB;EACpB,sBAAsB;EACtB,WAAW;EACX,4CAA4C;AAC9C","sourcesContent":[".toast-container {\n  position: fixed;\n  z-index: 1000;\n  top: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding-top: 0.4em;\n  padding-left: 0.4em;\n  width: 100%;\n  height: 0;\n  font-family: sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  box-sizing: border-box;\n}\n\n.toast-item {\n  display: inline-flex;\n  margin-bottom: 0.4em;\n  padding: 0.4em;\n  border-radius: 0.2em;\n  background-color: #fee;\n  color: #900;\n  box-shadow: 0 11px 20px rgba(0, 0, 0, 0.043);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -43319,13 +43319,11 @@ class Store {
 /*!**********************!*\
   !*** ./src/const.js ***!
   \**********************/
-/*! exports provided: OfferCost, DateGap, DESTINATION_CITIES, POINT_TYPES, FilterType, SortType, UserAction, UpdateType, Key, MenuItem */
+/*! exports provided: DESTINATION_CITIES, POINT_TYPES, FilterType, SortType, UserAction, UpdateType, Key, MenuItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OfferCost", function() { return OfferCost; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateGap", function() { return DateGap; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DESTINATION_CITIES", function() { return DESTINATION_CITIES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "POINT_TYPES", function() { return POINT_TYPES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterType", function() { return FilterType; });
@@ -43334,16 +43332,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateType", function() { return UpdateType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Key", function() { return Key; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return MenuItem; });
-const OfferCost = {
-  FROM: 1,
-  TO: 500,
-};
-
-const DateGap = {
-  FROM: 1,
-  TO: 7,
-};
-
 const DESTINATION_CITIES = [
   `Chamonix`,
   `Geneva`,
@@ -43436,28 +43424,21 @@ const MenuItem = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _view_main_nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view/main-nav */ "./src/view/main-nav.js");
-/* harmony import */ var _view_stats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view/stats */ "./src/view/stats.js");
-/* harmony import */ var _presenter_info__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./presenter/info */ "./src/presenter/info.js");
-/* harmony import */ var _presenter_trip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./presenter/trip */ "./src/presenter/trip.js");
-/* harmony import */ var _presenter_filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./presenter/filter */ "./src/presenter/filter.js");
-/* harmony import */ var _model_points__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./model/points */ "./src/model/points.js");
-/* harmony import */ var _model_filter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./model/filter */ "./src/model/filter.js");
-/* harmony import */ var _model_offers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./model/offers */ "./src/model/offers.js");
-/* harmony import */ var _model_destinations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./model/destinations */ "./src/model/destinations.js");
-/* harmony import */ var _utils_render__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/render */ "./src/utils/render.js");
-/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./api/api */ "./src/api/api.js");
-/* harmony import */ var _api_store__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./api/store */ "./src/api/store.js");
-/* harmony import */ var _api_provider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./api/provider */ "./src/api/provider.js");
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./const */ "./src/const.js");
-// import ControlsView from './view/controls';
-// import NewEventButtonView from './view/new-event-button';
+/* harmony import */ var _utils_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/render */ "./src/utils/render.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./const */ "./src/const.js");
+/* harmony import */ var _view_main_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./view/main-nav */ "./src/view/main-nav.js");
+/* harmony import */ var _view_stats__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./view/stats */ "./src/view/stats.js");
+/* harmony import */ var _presenter_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./presenter/info */ "./src/presenter/info.js");
+/* harmony import */ var _presenter_trip__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./presenter/trip */ "./src/presenter/trip.js");
+/* harmony import */ var _presenter_filter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./presenter/filter */ "./src/presenter/filter.js");
+/* harmony import */ var _model_points__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./model/points */ "./src/model/points.js");
+/* harmony import */ var _model_filter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./model/filter */ "./src/model/filter.js");
+/* harmony import */ var _model_offers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./model/offers */ "./src/model/offers.js");
+/* harmony import */ var _model_destinations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./model/destinations */ "./src/model/destinations.js");
+/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./api/api */ "./src/api/api.js");
+/* harmony import */ var _api_store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./api/store */ "./src/api/store.js");
+/* harmony import */ var _api_provider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./api/provider */ "./src/api/provider.js");
 
-
-
-// import {generatePoint} from './mock/point';
-// import {generateTab} from './mock/tabs';
-// import {generateFilter} from './mock/filter';
 
 
 
@@ -43482,67 +43463,37 @@ const STORE_PREFIX = `big-trip-localstorage`;
 const STORE_VER = `v13`;
 const STORE_NAME = `${STORE_PREFIX}-${STORE_VER}`;
 
-// const pointsCount = 20;
+const api = new _api_api__WEBPACK_IMPORTED_MODULE_11__["default"](END_POINT, AUTHORIZATION);
+const store = new _api_store__WEBPACK_IMPORTED_MODULE_12__["default"](STORE_NAME, window.localStorage);
+const apiWithProvider = new _api_provider__WEBPACK_IMPORTED_MODULE_13__["default"](api, store);
 
-// const points = new Array(pointsCount).fill().map(generatePoint);
-// const tabs = generateTab();
-// const filters = generateFilter();
-
-// const filters = [
-//   {
-//     type: `everything`,
-//     name: `EVERYTHING`,
-//     count: 1
-//   }
-// ];
-
-const api = new _api_api__WEBPACK_IMPORTED_MODULE_10__["default"](END_POINT, AUTHORIZATION);
-const store = new _api_store__WEBPACK_IMPORTED_MODULE_11__["default"](STORE_NAME, window.localStorage);
-const apiWithProvider = new _api_provider__WEBPACK_IMPORTED_MODULE_12__["default"](api, store);
-
-// header
 const bodyContainer = document.querySelector(`.page-body`);
 const infoContainer = bodyContainer.querySelector(`.page-header .trip-main`);
 const newEventButton = infoContainer.querySelector(`.trip-main__event-add-btn`);
 const mainNavTitle = infoContainer.querySelector(`.trip-main__title`);
 const filtersTitle = infoContainer.querySelector(`.trip-main__filter`);
-
-
-// const headerContainer = document.querySelector(`.page-header`);
-// const tripContainer = headerContainer.querySelector(`.trip-main`);
-// tripContainer.innerHTML = ``;
-
-// main
-const mainContainer = document.querySelector(`.page-main`);
+const mainContainer = bodyContainer.querySelector(`.page-main`);
 const pointsContainer = mainContainer.querySelector(`.trip-events`);
-
-// tabs
-// render(tripContainer, new ControlsView(tabs, filters, `everything`), RenderPosition.BEFOREEND);
-// render(tripContainer, new NewEventButtonView(), RenderPosition.BEFOREEND);
-
 const statsContainer = mainContainer.querySelector(`.page-body__container`);
-// render(statsContainer, new StatsView(), RenderPosition.BEFOREEND);
 
-// trip
-const pointsModel = new _model_points__WEBPACK_IMPORTED_MODULE_5__["default"]();
-// pointsModel.setPoints(points);
-const offersModel = new _model_offers__WEBPACK_IMPORTED_MODULE_7__["default"]();
-const destinationsModel = new _model_destinations__WEBPACK_IMPORTED_MODULE_8__["default"]();
-const filterModel = new _model_filter__WEBPACK_IMPORTED_MODULE_6__["default"]();
+const pointsModel = new _model_points__WEBPACK_IMPORTED_MODULE_7__["default"]();
+const offersModel = new _model_offers__WEBPACK_IMPORTED_MODULE_9__["default"]();
+const destinationsModel = new _model_destinations__WEBPACK_IMPORTED_MODULE_10__["default"]();
+const filterModel = new _model_filter__WEBPACK_IMPORTED_MODULE_8__["default"]();
 
-const infoPresenter = new _presenter_info__WEBPACK_IMPORTED_MODULE_2__["default"](infoContainer, pointsModel);
-const tripPresenter = new _presenter_trip__WEBPACK_IMPORTED_MODULE_3__["default"](pointsContainer, pointsModel, filterModel, offersModel, destinationsModel, apiWithProvider, newEventButton);
-const filtersPresenter = new _presenter_filter__WEBPACK_IMPORTED_MODULE_4__["default"](filtersTitle, filterModel, pointsModel);
+const infoPresenter = new _presenter_info__WEBPACK_IMPORTED_MODULE_4__["default"](infoContainer, pointsModel);
+const tripPresenter = new _presenter_trip__WEBPACK_IMPORTED_MODULE_5__["default"](pointsContainer, pointsModel, filterModel, offersModel, destinationsModel, apiWithProvider, newEventButton);
+const filtersPresenter = new _presenter_filter__WEBPACK_IMPORTED_MODULE_6__["default"](filtersTitle, filterModel, pointsModel);
 
-const mainNavComponent = new _view_main_nav__WEBPACK_IMPORTED_MODULE_0__["default"](newEventButton, _const__WEBPACK_IMPORTED_MODULE_13__["MenuItem"].TABLE);
+const mainNavComponent = new _view_main_nav__WEBPACK_IMPORTED_MODULE_2__["default"](newEventButton, _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].TABLE);
 
-const statsComponent = new _view_stats__WEBPACK_IMPORTED_MODULE_1__["default"]();
+const statsComponent = new _view_stats__WEBPACK_IMPORTED_MODULE_3__["default"]();
 
 infoPresenter.init();
 filtersPresenter.init();
 tripPresenter.init();
 
-Object(_utils_render__WEBPACK_IMPORTED_MODULE_9__["render"])(statsContainer, statsComponent, _utils_render__WEBPACK_IMPORTED_MODULE_9__["RenderPosition"].AFTEREND);
+Object(_utils_render__WEBPACK_IMPORTED_MODULE_0__["render"])(statsContainer, statsComponent, _utils_render__WEBPACK_IMPORTED_MODULE_0__["RenderPosition"].AFTEREND);
 
 const onPointNewFormClose = () => {
   mainNavComponent.getElement().querySelector(`.trip-tabs__btn:first-child`).classList.add(`trip-tabs__btn--active`);
@@ -43551,19 +43502,19 @@ const onPointNewFormClose = () => {
 
 const onMainNavClick = (mainNavItem) => {
   switch (mainNavItem) {
-    case _const__WEBPACK_IMPORTED_MODULE_13__["MenuItem"].NEW_EVENT:
+    case _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].NEW_EVENT:
       tripPresenter.destroy();
-      filterModel.setFilter(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].MAJOR, _const__WEBPACK_IMPORTED_MODULE_13__["FilterType"].EVERYTHING);
+      filterModel.setFilter(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MAJOR, _const__WEBPACK_IMPORTED_MODULE_1__["FilterType"].EVERYTHING);
       tripPresenter.init();
       tripPresenter.createPoint(onPointNewFormClose);
       statsComponent.hide();
       break;
-    case _const__WEBPACK_IMPORTED_MODULE_13__["MenuItem"].TABLE:
+    case _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].TABLE:
       tripPresenter.destroy();
       tripPresenter.init();
       statsComponent.hide();
       break;
-    case _const__WEBPACK_IMPORTED_MODULE_13__["MenuItem"].STATS:
+    case _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].STATS:
       tripPresenter.destroy();
       statsComponent.init(pointsModel.getPoints());
       statsComponent.show();
@@ -43575,28 +43526,28 @@ const onMainNavClick = (mainNavItem) => {
 
 apiWithProvider.getPoints()
   .then((points) => {
-    pointsModel.setPoints(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].INIT, points);
-    Object(_utils_render__WEBPACK_IMPORTED_MODULE_9__["render"])(mainNavTitle, mainNavComponent, _utils_render__WEBPACK_IMPORTED_MODULE_9__["RenderPosition"].AFTEREND);
+    pointsModel.setPoints(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].INIT, points);
+    Object(_utils_render__WEBPACK_IMPORTED_MODULE_0__["render"])(mainNavTitle, mainNavComponent, _utils_render__WEBPACK_IMPORTED_MODULE_0__["RenderPosition"].AFTEREND);
     mainNavComponent.setOnMainNavClick(onMainNavClick);
   })
   .catch(() => {
-    pointsModel.setPoints(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].INIT, []);
+    pointsModel.setPoints(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].INIT, []);
   });
 
 apiWithProvider.getOffers()
   .then((offers) => {
-    offersModel.setOffers(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].MINOR, offers);
+    offersModel.setOffers(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MINOR, offers);
   })
   .catch(() => {
-    offersModel.setOffers(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].MINOR, []);
+    offersModel.setOffers(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MINOR, []);
   });
 
 apiWithProvider.getDestinations()
   .then((destinations) => {
-    destinationsModel.setDestinations(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].MINOR, destinations);
+    destinationsModel.setDestinations(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MINOR, destinations);
   })
   .catch(() => {
-    destinationsModel.setDestinations(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].MINOR, []);
+    destinationsModel.setDestinations(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MINOR, []);
   });
 
 window.addEventListener(`load`, () => {
@@ -43609,7 +43560,7 @@ window.addEventListener(`online`, () => {
     apiWithProvider
       .sync()
       .then((points) => {
-        pointsModel.setPoints(_const__WEBPACK_IMPORTED_MODULE_13__["UpdateType"].MINOR, points);
+        pointsModel.setPoints(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MINOR, points);
       });
   }
 });
