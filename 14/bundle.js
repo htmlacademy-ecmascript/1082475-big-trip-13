@@ -43319,12 +43319,11 @@ class Store {
 /*!**********************!*\
   !*** ./src/const.js ***!
   \**********************/
-/*! exports provided: DESTINATION_CITIES, POINT_TYPES, FilterType, SortType, UserAction, UpdateType, Key, MenuItem */
+/*! exports provided: POINT_TYPES, FilterType, SortType, UserAction, UpdateType, Key, MenuItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DESTINATION_CITIES", function() { return DESTINATION_CITIES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "POINT_TYPES", function() { return POINT_TYPES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterType", function() { return FilterType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortType", function() { return SortType; });
@@ -43332,37 +43331,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateType", function() { return UpdateType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Key", function() { return Key; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return MenuItem; });
-const DESTINATION_CITIES = [
-  `Chamonix`,
-  `Geneva`,
-  `Amsterdam`,
-  `Helsinki`,
-  `Oslo`,
-  `Kopenhagen`,
-  `Den Haag`,
-  `Rotterdam`,
-  `Saint Petersburg`,
-  `Moscow`,
-  `Sochi`,
-  `Tokio`,
-  `Kioto`,
-  `Nagasaki`,
-  `Hiroshima`,
-  `Berlin`,
-  `Munich`,
-  `Frankfurt`,
-  `Vien`,
-  `Rome`,
-  `Naples`,
-  `Venice`,
-  `Milan`,
-  `Monaco`,
-  `Paris`,
-  `Barcelona`,
-  `Valencia`,
-  `Madrid`,
-];
-
 const POINT_TYPES = [
   `Taxi`,
   `Bus`,
@@ -43426,18 +43394,22 @@ const MenuItem = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/render */ "./src/utils/render.js");
 /* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./const */ "./src/const.js");
-/* harmony import */ var _view_main_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./view/main-nav */ "./src/view/main-nav.js");
-/* harmony import */ var _view_stats__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./view/stats */ "./src/view/stats.js");
-/* harmony import */ var _presenter_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./presenter/info */ "./src/presenter/info.js");
-/* harmony import */ var _presenter_trip__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./presenter/trip */ "./src/presenter/trip.js");
-/* harmony import */ var _presenter_filter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./presenter/filter */ "./src/presenter/filter.js");
-/* harmony import */ var _model_points__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./model/points */ "./src/model/points.js");
-/* harmony import */ var _model_filter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./model/filter */ "./src/model/filter.js");
-/* harmony import */ var _model_offers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./model/offers */ "./src/model/offers.js");
-/* harmony import */ var _model_destinations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./model/destinations */ "./src/model/destinations.js");
-/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./api/api */ "./src/api/api.js");
-/* harmony import */ var _api_store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./api/store */ "./src/api/store.js");
-/* harmony import */ var _api_provider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./api/provider */ "./src/api/provider.js");
+/* harmony import */ var _utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/common */ "./src/utils/common.js");
+/* harmony import */ var _utils_toast_toast_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/toast/toast.js */ "./src/utils/toast/toast.js");
+/* harmony import */ var _view_main_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view/main-nav */ "./src/view/main-nav.js");
+/* harmony import */ var _view_stats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./view/stats */ "./src/view/stats.js");
+/* harmony import */ var _presenter_info__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./presenter/info */ "./src/presenter/info.js");
+/* harmony import */ var _presenter_trip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./presenter/trip */ "./src/presenter/trip.js");
+/* harmony import */ var _presenter_filter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./presenter/filter */ "./src/presenter/filter.js");
+/* harmony import */ var _model_points__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./model/points */ "./src/model/points.js");
+/* harmony import */ var _model_filter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./model/filter */ "./src/model/filter.js");
+/* harmony import */ var _model_offers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./model/offers */ "./src/model/offers.js");
+/* harmony import */ var _model_destinations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./model/destinations */ "./src/model/destinations.js");
+/* harmony import */ var _api_api__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./api/api */ "./src/api/api.js");
+/* harmony import */ var _api_store__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./api/store */ "./src/api/store.js");
+/* harmony import */ var _api_provider__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./api/provider */ "./src/api/provider.js");
+
+
 
 
 
@@ -43463,9 +43435,9 @@ const STORE_PREFIX = `big-trip-localstorage`;
 const STORE_VER = `v13`;
 const STORE_NAME = `${STORE_PREFIX}-${STORE_VER}`;
 
-const api = new _api_api__WEBPACK_IMPORTED_MODULE_11__["default"](END_POINT, AUTHORIZATION);
-const store = new _api_store__WEBPACK_IMPORTED_MODULE_12__["default"](STORE_NAME, window.localStorage);
-const apiWithProvider = new _api_provider__WEBPACK_IMPORTED_MODULE_13__["default"](api, store);
+const api = new _api_api__WEBPACK_IMPORTED_MODULE_13__["default"](END_POINT, AUTHORIZATION);
+const store = new _api_store__WEBPACK_IMPORTED_MODULE_14__["default"](STORE_NAME, window.localStorage);
+const apiWithProvider = new _api_provider__WEBPACK_IMPORTED_MODULE_15__["default"](api, store);
 
 const bodyContainer = document.querySelector(`.page-body`);
 const infoContainer = bodyContainer.querySelector(`.page-header .trip-main`);
@@ -43476,18 +43448,18 @@ const mainContainer = bodyContainer.querySelector(`.page-main`);
 const pointsContainer = mainContainer.querySelector(`.trip-events`);
 const statsContainer = mainContainer.querySelector(`.page-body__container`);
 
-const pointsModel = new _model_points__WEBPACK_IMPORTED_MODULE_7__["default"]();
-const offersModel = new _model_offers__WEBPACK_IMPORTED_MODULE_9__["default"]();
-const destinationsModel = new _model_destinations__WEBPACK_IMPORTED_MODULE_10__["default"]();
-const filterModel = new _model_filter__WEBPACK_IMPORTED_MODULE_8__["default"]();
+const pointsModel = new _model_points__WEBPACK_IMPORTED_MODULE_9__["default"]();
+const offersModel = new _model_offers__WEBPACK_IMPORTED_MODULE_11__["default"]();
+const destinationsModel = new _model_destinations__WEBPACK_IMPORTED_MODULE_12__["default"]();
+const filterModel = new _model_filter__WEBPACK_IMPORTED_MODULE_10__["default"]();
 
-const infoPresenter = new _presenter_info__WEBPACK_IMPORTED_MODULE_4__["default"](infoContainer, pointsModel);
-const tripPresenter = new _presenter_trip__WEBPACK_IMPORTED_MODULE_5__["default"](pointsContainer, pointsModel, filterModel, offersModel, destinationsModel, apiWithProvider, newEventButton);
-const filtersPresenter = new _presenter_filter__WEBPACK_IMPORTED_MODULE_6__["default"](filtersTitle, filterModel, pointsModel);
+const infoPresenter = new _presenter_info__WEBPACK_IMPORTED_MODULE_6__["default"](infoContainer, pointsModel);
+const tripPresenter = new _presenter_trip__WEBPACK_IMPORTED_MODULE_7__["default"](pointsContainer, pointsModel, filterModel, offersModel, destinationsModel, apiWithProvider, newEventButton);
+const filtersPresenter = new _presenter_filter__WEBPACK_IMPORTED_MODULE_8__["default"](filtersTitle, filterModel, pointsModel);
 
-const mainNavComponent = new _view_main_nav__WEBPACK_IMPORTED_MODULE_2__["default"](newEventButton, _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].TABLE);
+const mainNavComponent = new _view_main_nav__WEBPACK_IMPORTED_MODULE_4__["default"](newEventButton, _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].TABLE);
 
-const statsComponent = new _view_stats__WEBPACK_IMPORTED_MODULE_3__["default"]();
+const statsComponent = new _view_stats__WEBPACK_IMPORTED_MODULE_5__["default"]();
 
 infoPresenter.init();
 filtersPresenter.init();
@@ -43503,6 +43475,13 @@ const onPointNewFormClose = () => {
 const onMainNavClick = (mainNavItem) => {
   switch (mainNavItem) {
     case _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].NEW_EVENT:
+      if (!Object(_utils_common__WEBPACK_IMPORTED_MODULE_2__["isOnline"])()) {
+        Object(_utils_toast_toast_js__WEBPACK_IMPORTED_MODULE_3__["toast"])(`You can't create a new point offline`);
+        mainNavComponent.setMenuItem(_const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].TABLE);
+        newEventButton.disabled = false;
+        return;
+      }
+      newEventButton.disabled = true;
       tripPresenter.destroy();
       filterModel.setFilter(_const__WEBPACK_IMPORTED_MODULE_1__["UpdateType"].MAJOR, _const__WEBPACK_IMPORTED_MODULE_1__["FilterType"].EVERYTHING);
       tripPresenter.init();
@@ -43583,6 +43562,8 @@ window.addEventListener(`offline`, () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Destinations; });
 /* harmony import */ var _utils_observer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/observer */ "./src/utils/observer.js");
+/* harmony import */ var _utils_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/point */ "./src/utils/point.js");
+
 
 
 class Destinations extends _utils_observer__WEBPACK_IMPORTED_MODULE_0__["default"] {
@@ -43608,7 +43589,7 @@ class Destinations extends _utils_observer__WEBPACK_IMPORTED_MODULE_0__["default
         {
           destinationInfo: {
             description: destinations.description,
-            photos: destinations.pictures.map((photo) => photo.src),
+            photos: Object(_utils_point__WEBPACK_IMPORTED_MODULE_1__["adaptPhotosToClient"])(destinations.pictures),
           },
         }
     );
@@ -43738,9 +43719,9 @@ class Offers extends _utils_observer__WEBPACK_IMPORTED_MODULE_0__["default"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Points; });
 /* harmony import */ var _utils_observer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/observer */ "./src/utils/observer.js");
-/* harmony import */ var nanoid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nanoid */ "./node_modules/nanoid/index.browser.js");
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_point__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/point */ "./src/utils/point.js");
 
 
 
@@ -43802,42 +43783,19 @@ class Points extends _utils_observer__WEBPACK_IMPORTED_MODULE_0__["default"] {
   }
 
   static adaptToClient(point) {
-    const getOffers = (offers) => {
-      const readyOffers = [];
-
-      offers.map((offer) => {
-        readyOffers.push(Object.assign(
-            {},
-            offer,
-            {
-              id: Object(nanoid__WEBPACK_IMPORTED_MODULE_1__["nanoid"])(),
-              condition: offer.title,
-              cost: offer.price,
-            }
-        ));
-      });
-
-      readyOffers.map((offer) => {
-        delete offer.title;
-        delete offer.price;
-      });
-
-      return readyOffers;
-    };
-
     const adaptedPoint = Object.assign(
         {},
         point,
         {
           pointType: point.type,
           destinationCity: point.destination.name,
-          offers: getOffers(point.offers),
+          offers: Object(_utils_point__WEBPACK_IMPORTED_MODULE_2__["adaptOffersToClient"])(point.offers),
           destinationInfo: {
             description: point.destination.description,
-            photos: point.destination.pictures.map((photo) => photo.src),
+            photos: Object(_utils_point__WEBPACK_IMPORTED_MODULE_2__["adaptPhotosToClient"])(point.destination.pictures),
           },
-          dateTimeStartEvent: dayjs__WEBPACK_IMPORTED_MODULE_2___default()(point.date_from),
-          dateTimeEndEvent: dayjs__WEBPACK_IMPORTED_MODULE_2___default()(point.date_to),
+          dateTimeStartEvent: dayjs__WEBPACK_IMPORTED_MODULE_1___default()(point.date_from),
+          dateTimeEndEvent: dayjs__WEBPACK_IMPORTED_MODULE_1___default()(point.date_to),
           cost: point.base_price,
           isFavorite: point.is_favorite,
         }
@@ -43854,56 +43812,20 @@ class Points extends _utils_observer__WEBPACK_IMPORTED_MODULE_0__["default"] {
   }
 
   static adaptToServer(point) {
-    const getOffers = (offers) => {
-      const readyOffers = [];
-
-      offers.map((offer) => {
-        readyOffers.push(Object.assign(
-            {},
-            offer,
-            {
-              title: offer.condition,
-              price: offer.cost,
-            }
-        ));
-      });
-
-      readyOffers.map((offer) => {
-        delete offer.id;
-        delete offer.cost;
-        delete offer.condition;
-      });
-
-      return readyOffers;
-    };
-
-    const getPhotos = (photos) => {
-      const readyPhotos = [];
-
-      photos.map((photo) => {
-        readyPhotos.push({
-          'src': photo,
-          'description': `description`,
-        });
-      });
-
-      return readyPhotos;
-    };
-
     const adaptedPoint = Object.assign(
         {},
         point,
         {
           'base_price': parseInt(point.cost, 10),
-          'date_from': point.dateTimeStartEvent instanceof dayjs__WEBPACK_IMPORTED_MODULE_2___default.a ? point.dateTimeStartEvent.toISOString() : null,
-          'date_to': point.dateTimeEndEvent instanceof dayjs__WEBPACK_IMPORTED_MODULE_2___default.a ? point.dateTimeEndEvent.toISOString() : null,
+          'date_from': point.dateTimeStartEvent instanceof dayjs__WEBPACK_IMPORTED_MODULE_1___default.a ? point.dateTimeStartEvent.toISOString() : null,
+          'date_to': point.dateTimeEndEvent instanceof dayjs__WEBPACK_IMPORTED_MODULE_1___default.a ? point.dateTimeEndEvent.toISOString() : null,
           'destination': {
             'name': point.destinationCity,
             'description': point.destinationInfo.description,
-            'pictures': getPhotos(point.destinationInfo.photos),
+            'pictures': Object(_utils_point__WEBPACK_IMPORTED_MODULE_2__["adaptPhotosToServer"])(point.destinationInfo.photos),
           },
           'is_favorite': point.isFavorite,
-          'offers': getOffers(point.offers),
+          'offers': Object(_utils_point__WEBPACK_IMPORTED_MODULE_2__["adaptOffersToServer"])(point.offers),
           'type': point.pointType,
         }
     );
@@ -44096,19 +44018,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const BLANK_POINT = {
-  pointType: _const__WEBPACK_IMPORTED_MODULE_2__["POINT_TYPES"][0].toLowerCase(),
-  destinationCity: _const__WEBPACK_IMPORTED_MODULE_2__["DESTINATION_CITIES"][0],
-  offers: [],
-  destinationInfo: {
-    description: ``,
-    photos: [],
-  },
-  dateTimeStartEvent: dayjs__WEBPACK_IMPORTED_MODULE_3___default()(),
-  dateTimeEndEvent: dayjs__WEBPACK_IMPORTED_MODULE_3___default()(),
-  cost: 0,
-  isFavorite: false,
-};
 
 class PointNew {
   constructor(pointListContainer, changeData, newEventButton) {
@@ -44123,6 +44032,21 @@ class PointNew {
     this._onDeleteClick = this._onDeleteClick.bind(this);
     this._onCloseClick = this._onCloseClick.bind(this);
     this._onEscKeyDown = this._onEscKeyDown.bind(this);
+
+    this._listCities = [];
+    this._BLANK_POINT = {
+      pointType: _const__WEBPACK_IMPORTED_MODULE_2__["POINT_TYPES"][0].toLowerCase(),
+      destinationCity: ``,
+      offers: [],
+      destinationInfo: {
+        description: ``,
+        photos: ``,
+      },
+      dateTimeStartEvent: dayjs__WEBPACK_IMPORTED_MODULE_3___default()(),
+      dateTimeEndEvent: dayjs__WEBPACK_IMPORTED_MODULE_3___default()().add(1, `day`),
+      cost: 0,
+      isFavorite: false,
+    };
   }
 
   init(callback, offers, destinations) {
@@ -44134,8 +44058,9 @@ class PointNew {
 
     this._getOffers(offers);
     this._getDestinations(destinations);
+    this._getListCities(destinations);
 
-    this._pointEditComponent = new _view_point_edit__WEBPACK_IMPORTED_MODULE_0__["default"](BLANK_POINT, offers, destinations, this._newEventButton);
+    this._pointEditComponent = new _view_point_edit__WEBPACK_IMPORTED_MODULE_0__["default"](this._BLANK_POINT, offers, destinations, this._newEventButton);
     this._pointEditComponent.setOnFormSubmitClick(this._onFormSubmit);
     this._pointEditComponent.setOnFormDeleteClick(this._onDeleteClick);
     this._pointEditComponent.setOnEditFormClose(this._onCloseClick);
@@ -44147,8 +44072,8 @@ class PointNew {
 
   _getOffers(offers) {
     for (const offer of offers) {
-      if (offer.pointType === (BLANK_POINT.pointType.toLowerCase())) {
-        BLANK_POINT.offers = offer.offers;
+      if (offer.pointType === (this._BLANK_POINT.pointType.toLowerCase())) {
+        this._BLANK_POINT.offers = offer.offers;
         break;
       }
     }
@@ -44156,12 +44081,37 @@ class PointNew {
 
   _getDestinations(destinations) {
     for (const destination of destinations) {
-      if (destination.name === BLANK_POINT.destinationCity) {
-        BLANK_POINT.destinationInfo.description = destination.destinationInfo.description;
-        BLANK_POINT.destinationInfo.photos = destination.destinationInfo.photos;
+      if (destination.name === this._BLANK_POINT.destinationCity) {
+        this._BLANK_POINT.destinationInfo.description = destination.destinationInfo.description;
+        this._BLANK_POINT.destinationInfo.photos = this._getPhotos(destination.destinationInfo.photos);
         break;
       }
     }
+  }
+
+  _getListCities(destinations) {
+    destinations.map((destination) => {
+      this._listCities.push(destination.name);
+    });
+    this._BLANK_POINT.destinationCity = this._listCities[0];
+  }
+
+  _getPhotos(photos) {
+    const readyPhotos = [];
+
+    photos.map((photo) => {
+      readyPhotos.push(Object.assign(
+          {},
+          photo,
+          {
+            src: photo.src,
+            alt: photo.alt,
+          }
+      ));
+    });
+
+    readyPhotos.map((photo) => delete photo.description);
+    return readyPhotos;
   }
 
   destroy() {
@@ -44728,13 +44678,19 @@ class Trip {
 /*!*****************************!*\
   !*** ./src/utils/common.js ***!
   \*****************************/
-/*! exports provided: getRandomInteger, isOnline */
+/*! exports provided: getRandomInteger, isOnline, convertDateTime, formatDateTime */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRandomInteger", function() { return getRandomInteger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isOnline", function() { return isOnline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertDateTime", function() { return convertDateTime; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDateTime", function() { return formatDateTime; });
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
+
+
 // Функция из интернета по генерации случайного числа из диапазона
 // Источник - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_random
 const getRandomInteger = (a = 0, b = 1) => {
@@ -44746,6 +44702,61 @@ const getRandomInteger = (a = 0, b = 1) => {
 
 const isOnline = () => {
   return window.navigator.onLine;
+};
+
+const Duration = {
+  ONE_HOUR: 60,
+  ONE_DAY: 1440,
+};
+
+const TWO_DIGITS = 10;
+
+const convertDateTime = (diffDateTime) => {
+  if (diffDateTime < Duration.ONE_HOUR) {
+    return `${diffDateTime < TWO_DIGITS ? `0${diffDateTime}M` : `${diffDateTime}M`}`;
+  }
+  if (diffDateTime >= Duration.ONE_HOUR && diffDateTime < Duration.ONE_DAY) {
+    const hours = Math.trunc(diffDateTime / Duration.ONE_HOUR);
+    const minutes = diffDateTime - (hours * Duration.ONE_HOUR);
+    return `${hours < TWO_DIGITS ? `0${hours}` : `${hours}`}H
+            ${minutes < TWO_DIGITS ? `0${minutes}` : `${minutes}`}M`;
+  }
+  const days = Math.trunc(diffDateTime / Duration.ONE_DAY);
+  const hours = Math.trunc((diffDateTime - (days * Duration.ONE_DAY)) / Duration.ONE_HOUR);
+  const minutes = (diffDateTime - (days * Duration.ONE_DAY)) - (hours * Duration.ONE_HOUR);
+  return `${days < TWO_DIGITS ? `0${days}` : `${days}`}D
+          ${hours < TWO_DIGITS ? `0${hours}` : `${hours}`}H
+          ${minutes < TWO_DIGITS ? `0${minutes}` : `${minutes}`}M`;
+};
+
+const formatDateTime = (dateTimeStartEvent, dateTimeEndEvent) => {
+  const eventDate = {};
+
+  eventDate.dateStart = dateTimeStartEvent !== null
+    ? dayjs__WEBPACK_IMPORTED_MODULE_0___default()(dateTimeStartEvent).format(`MMM DD`)
+    : ``;
+
+  eventDate.timeStart = dateTimeStartEvent !== null
+    ? dayjs__WEBPACK_IMPORTED_MODULE_0___default()(dateTimeStartEvent).format(`HH:mm`)
+    : ``;
+
+  eventDate.timeEnd = dateTimeEndEvent !== null
+    ? dayjs__WEBPACK_IMPORTED_MODULE_0___default()(dateTimeEndEvent).format(`HH:mm`)
+    : ``;
+
+  eventDate.machineDateStart = dateTimeStartEvent !== null
+    ? dayjs__WEBPACK_IMPORTED_MODULE_0___default()(dateTimeStartEvent).format(`YYYY-MM-DD`)
+    : ``;
+
+  eventDate.machineDateTimeStart = dateTimeStartEvent !== null
+    ? dayjs__WEBPACK_IMPORTED_MODULE_0___default()(dateTimeStartEvent).format(`YYYY-MM-DDTHH:mm`)
+    : ``;
+
+  eventDate.machineDateTimeEnd = dateTimeEndEvent !== null
+    ? dayjs__WEBPACK_IMPORTED_MODULE_0___default()(dateTimeEndEvent).format(`YYYY-MM-DDTHH:mm`)
+    : ``;
+
+  return eventDate;
 };
 
 
@@ -44882,7 +44893,7 @@ class Observer {
 /*!****************************!*\
   !*** ./src/utils/point.js ***!
   \****************************/
-/*! exports provided: sortPointDateUp, sortPointTimeMore, sortPointCostMore, isPointExpired, isPointUnexpired */
+/*! exports provided: sortPointDateUp, sortPointTimeMore, sortPointCostMore, isPointExpired, isPointUnexpired, adaptPhotosToClient, adaptPhotosToServer, adaptOffersToClient, adaptOffersToServer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44892,13 +44903,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortPointCostMore", function() { return sortPointCostMore; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPointExpired", function() { return isPointExpired; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPointUnexpired", function() { return isPointUnexpired; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adaptPhotosToClient", function() { return adaptPhotosToClient; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adaptPhotosToServer", function() { return adaptPhotosToServer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adaptOffersToClient", function() { return adaptOffersToClient; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adaptOffersToServer", function() { return adaptOffersToServer; });
 /* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
 /* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dayjs/plugin/isSameOrBefore */ "./node_modules/dayjs/plugin/isSameOrBefore.js");
-/* harmony import */ var dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var nanoid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nanoid */ "./node_modules/nanoid/index.browser.js");
+/* harmony import */ var dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! dayjs/plugin/isSameOrBefore */ "./node_modules/dayjs/plugin/isSameOrBefore.js");
+/* harmony import */ var dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_2__);
 
 
-dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.extend(dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_1___default.a);
+
+dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.extend(dayjs_plugin_isSameOrBefore__WEBPACK_IMPORTED_MODULE_2___default.a);
 
 // Функция помещает точки без даты в конце списка,
 // возвращая нужный вес для колбэка sort
@@ -44967,6 +44984,83 @@ const isPointExpired = (endEventDate) => {
 
 const isPointUnexpired = (endStartDate) => {
   return endStartDate === null ? false : dayjs__WEBPACK_IMPORTED_MODULE_0___default()().isSameOrBefore(endStartDate, `D`);
+};
+
+const adaptPhotosToClient = (photos) => {
+  const readyPhotos = [];
+
+  photos.map((photo) => {
+    readyPhotos.push(Object.assign(
+        {},
+        photo,
+        {
+          src: photo.src,
+          alt: photo.description,
+        }
+    ));
+  });
+
+  readyPhotos.map((photo) => delete photo.description);
+  return readyPhotos;
+};
+
+const adaptPhotosToServer = (photos) => {
+  const readyPhotos = [];
+
+  photos.map((photo) => {
+    readyPhotos.push({
+      'src': photo.src,
+      'description': photo.alt,
+    });
+  });
+
+  return readyPhotos;
+};
+
+const adaptOffersToClient = (offers) => {
+  const readyOffers = [];
+
+  offers.map((offer) => {
+    readyOffers.push(Object.assign(
+        {},
+        offer,
+        {
+          id: Object(nanoid__WEBPACK_IMPORTED_MODULE_1__["nanoid"])(),
+          condition: offer.title,
+          cost: offer.price,
+        }
+    ));
+  });
+
+  readyOffers.map((offer) => {
+    delete offer.title;
+    delete offer.price;
+  });
+
+  return readyOffers;
+};
+
+const adaptOffersToServer = (offers) => {
+  const readyOffers = [];
+
+  offers.map((offer) => {
+    readyOffers.push(Object.assign(
+        {},
+        offer,
+        {
+          title: offer.condition,
+          price: offer.cost,
+        }
+    ));
+  });
+
+  readyOffers.map((offer) => {
+    delete offer.id;
+    delete offer.cost;
+    delete offer.condition;
+  });
+
+  return readyOffers;
 };
 
 
@@ -45397,10 +45491,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MainNav; });
 /* harmony import */ var _abstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abstract */ "./src/view/abstract.js");
 /* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.js");
-/* harmony import */ var _utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/common */ "./src/utils/common.js");
-/* harmony import */ var _utils_toast_toast_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/toast/toast.js */ "./src/utils/toast/toast.js");
-
-
 
 
 
@@ -45433,12 +45523,6 @@ class MainNav extends _abstract__WEBPACK_IMPORTED_MODULE_0__["default"] {
       return;
     }
 
-    if (!Object(_utils_common__WEBPACK_IMPORTED_MODULE_2__["isOnline"])()) {
-      Object(_utils_toast_toast_js__WEBPACK_IMPORTED_MODULE_3__["toast"])(`You can't create a new point offline`);
-      this.setMenuItem(_const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].TABLE);
-      return;
-    }
-
     const mainNavItems = target.parentNode.querySelectorAll(`.trip-tabs__btn`);
     mainNavItems.forEach((mainNavItem) => {
       mainNavItem.classList.remove(`trip-tabs__btn--active`);
@@ -45447,10 +45531,6 @@ class MainNav extends _abstract__WEBPACK_IMPORTED_MODULE_0__["default"] {
         this._newEventButton.disabled = false;
       }
     });
-
-    if (target.attributes.id.value === _const__WEBPACK_IMPORTED_MODULE_1__["MenuItem"].NEW_EVENT) {
-      this._newEventButton.disabled = true;
-    }
 
     this._callback.onMainNavClick(target.attributes.id.value);
   }
@@ -45646,7 +45726,7 @@ const createDestinationTemplate = (description) => {
 };
 
 const createPhotoTemplate = (photo) => {
-  return `<img class="event__photo" src="${photo}" alt="Event photo">`;
+  return `<img class="event__photo" src="${photo.src}" alt="${photo.alt}">`;
 };
 
 const createPhotosTemplate = (photos) => {
@@ -45711,6 +45791,7 @@ class PointEdit extends _smart__WEBPACK_IMPORTED_MODULE_0__["default"] {
     this._datepicker = null;
 
     this._newEventButton = newEventButton;
+    this._submitButton = this.getElement().querySelector(`.event__save-btn`);
 
     this._onFormSubmitClick = this._onFormSubmitClick.bind(this);
     this._onFormDeleteClick = this._onFormDeleteClick.bind(this);
@@ -45762,11 +45843,13 @@ class PointEdit extends _smart__WEBPACK_IMPORTED_MODULE_0__["default"] {
       start: flatpickr__WEBPACK_IMPORTED_MODULE_3___default()(startDateInput, {
         enableTime: true,
         dateFormat: `d/m/Y H:i`,
+        defaultDate: this._data.dateTimeStartEvent.toDate(),
         onChange: this._onStartDateChange,
       }),
       end: flatpickr__WEBPACK_IMPORTED_MODULE_3___default()(endDateInput, {
         enableTime: true,
         dateFormat: `d/m/Y H:i`,
+        defaultDate: this._data.dateTimeEndEvent.toDate(),
         onChange: this._onEndDateChange,
       }),
     };
@@ -45814,12 +45897,11 @@ class PointEdit extends _smart__WEBPACK_IMPORTED_MODULE_0__["default"] {
 
   _onDestinationChange(evt) {
     evt.preventDefault();
-    const submitButton = this.getElement().querySelector(`.event__save-btn`);
 
     this._destinations.find((destination) => {
       if (destination.name !== evt.target.value) {
         evt.target.setCustomValidity(`Необходимо выбрать город из списка`);
-        submitButton.disabled = true;
+        this._submitButton.disabled = true;
         // this.updateData({
         //   isWrongCity: true,
         // });
@@ -45851,6 +45933,21 @@ class PointEdit extends _smart__WEBPACK_IMPORTED_MODULE_0__["default"] {
 
   _onCostChange(evt) {
     evt.preventDefault();
+    const target = evt.target;
+    const costNumber = parseInt(target.value, 10);
+    if (!Number.isInteger(costNumber)) {
+      target.setCustomValidity(`Cost is an integer`);
+      this._submitButton.disabled = true;
+      return;
+    }
+    if (costNumber < 0) {
+      target.setCustomValidity(`Cost is a positive number`);
+      this._submitButton.disabled = true;
+      return;
+    }
+    target.setCustomValidity(``);
+    this._submitButton.disabled = false;
+
     this.updateData({
       cost: evt.target.value,
     }, true);
@@ -45934,87 +46031,31 @@ class PointEdit extends _smart__WEBPACK_IMPORTED_MODULE_0__["default"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Point; });
 /* harmony import */ var _abstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./abstract */ "./src/view/abstract.js");
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var he__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! he */ "./node_modules/he/he.js");
-/* harmony import */ var he__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(he__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var he__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! he */ "./node_modules/he/he.js");
+/* harmony import */ var he__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(he__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/common */ "./src/utils/common.js");
 
 
 
-
-const Duration = {
-  ONE_HOUR: 60,
-  ONE_DAY: 1440,
-};
-
-const TWO_DIGITS = 10;
-
-const convertDateTime = (diffDateTime) => {
-  if (diffDateTime <= Duration.ONE_HOUR) {
-    return `${diffDateTime < TWO_DIGITS ? `0${diffDateTime}M` : `${diffDateTime}M`}`;
-  }
-  if (diffDateTime > Duration.ONE_HOUR && diffDateTime <= Duration.ONE_DAY) {
-    const hours = Math.trunc(diffDateTime / Duration.ONE_HOUR);
-    const minutes = diffDateTime - (hours * Duration.ONE_HOUR);
-    return `${hours < TWO_DIGITS ? `0${hours}` : `${hours}`}H
-            ${minutes < TWO_DIGITS ? `0${minutes}` : `${minutes}`}M`;
-  }
-  const days = Math.trunc(diffDateTime / Duration.ONE_DAY);
-  const hours = Math.trunc((diffDateTime - (days * Duration.ONE_DAY)) / Duration.ONE_HOUR);
-  const minutes = (diffDateTime - (days * Duration.ONE_DAY)) - (hours * Duration.ONE_HOUR);
-  return `${days < TWO_DIGITS ? `0${days}` : `${days}`}D
-          ${hours < TWO_DIGITS ? `0${hours}` : `${hours}`}H
-          ${minutes < TWO_DIGITS ? `0${minutes}` : `${minutes}`}M`;
-};
-
-const formatDateTime = (dateTimeStartEvent, dateTimeEndEvent) => {
-  const eventDate = {};
-
-  eventDate.dateStart = dateTimeStartEvent !== null
-    ? dayjs__WEBPACK_IMPORTED_MODULE_1___default()(dateTimeStartEvent).format(`MMM DD`)
-    : ``;
-
-  eventDate.timeStart = dateTimeStartEvent !== null
-    ? dayjs__WEBPACK_IMPORTED_MODULE_1___default()(dateTimeStartEvent).format(`HH:mm`)
-    : ``;
-
-  eventDate.timeEnd = dateTimeEndEvent !== null
-    ? dayjs__WEBPACK_IMPORTED_MODULE_1___default()(dateTimeEndEvent).format(`HH:mm`)
-    : ``;
-
-  eventDate.machineDateStart = dateTimeStartEvent !== null
-    ? dayjs__WEBPACK_IMPORTED_MODULE_1___default()(dateTimeStartEvent).format(`YYYY-MM-DD`)
-    : ``;
-
-  eventDate.machineDateTimeStart = dateTimeStartEvent !== null
-    ? dayjs__WEBPACK_IMPORTED_MODULE_1___default()(dateTimeStartEvent).format(`YYYY-MM-DDTHH:mm`)
-    : ``;
-
-  eventDate.machineDateTimeEnd = dateTimeEndEvent !== null
-    ? dayjs__WEBPACK_IMPORTED_MODULE_1___default()(dateTimeEndEvent).format(`YYYY-MM-DDTHH:mm`)
-    : ``;
-
-  return eventDate;
-};
 
 const createSelectedOfferTemplate = (offer) => {
   return `<li class="event__offer">
     <span class="event__offer-title">${offer.condition}</span>
     &plus;&euro;&nbsp;
-    <span class="event__offer-price">${he__WEBPACK_IMPORTED_MODULE_2___default.a.encode(offer.cost.toString())}</span>
+    <span class="event__offer-price">${he__WEBPACK_IMPORTED_MODULE_1___default.a.encode(offer.cost.toString())}</span>
   </li>`;
 };
 
 const createPointTemplate = (point) => {
   const {pointType, destinationCity, dateTimeStartEvent, dateTimeEndEvent, cost, offers, isFavorite} = point;
 
-  const eventDate = formatDateTime(dateTimeStartEvent, dateTimeEndEvent);
+  const eventDate = Object(_utils_common__WEBPACK_IMPORTED_MODULE_2__["formatDateTime"])(dateTimeStartEvent, dateTimeEndEvent);
 
   const diffDateTime = (dateTimeStartEvent !== null && dateTimeEndEvent)
     ? dateTimeEndEvent.diff(dateTimeStartEvent, `minute`)
     : ``;
 
-  const dateTime = convertDateTime(diffDateTime);
+  const dateTime = Object(_utils_common__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(diffDateTime);
 
   const options = offers
   .map((offer) => createSelectedOfferTemplate(offer))
@@ -46036,7 +46077,7 @@ const createPointTemplate = (point) => {
         <p class="event__duration">${dateTime}</p>
       </div>
       <p class="event__price">
-        &euro;&nbsp;<span class="event__price-value">${he__WEBPACK_IMPORTED_MODULE_2___default.a.encode(cost.toString())}</span>
+        &euro;&nbsp;<span class="event__price-value">${he__WEBPACK_IMPORTED_MODULE_1___default.a.encode(cost.toString())}</span>
       </p>
       <h4 class="visually-hidden">Offers:</h4>
       <ul class="event__selected-offers">
@@ -46468,7 +46509,7 @@ const renderTimeSpendChart = (timeCtx, labels, countDays) => {
 };
 
 const createStatsTemplate = () => {
-  return `<section class="statistics">
+  return `<section class="statistics visually-hidden">
   <h2 class="visually-hidden">Trip statistics</h2>
 
   <div class="statistics__item statistics__item--money">
